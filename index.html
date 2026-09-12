@@ -669,11 +669,17 @@
       min-height: 246px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 24px;
       padding: 20px;
       border-radius: 19px;
       background: var(--white);
       box-shadow: 0 5px 16px rgba(23, 32, 27, .04);
+    }
+
+    .outcome > div {
+      display: grid;
+      grid-template-rows: 3.15em auto;
     }
 
     .outcome:nth-child(2) {
@@ -812,6 +818,8 @@
 
     .about-copy>.eyebrow {
       margin-bottom: 21px;
+      font-size: 14px;
+      letter-spacing: .13em;
     }
 
     .about-copy .title {
@@ -1388,9 +1396,7 @@ html.js .step {
         <div class="problem-grid">
           <div>
             <p class="eyebrow">O problema não é apenas postar</p>
-            <h2 class="title">A comunicação perde força quando as decisões nascem do <em>achismo.</em></h2>
-            <p class="problem-lead">Estar presente nas redes sociais não é o mesmo que comunicar com clareza, valor e
-              direção.</p>
+            <h2 class="title">Estar presente nas redes sociais não é o mesmo que comunicar com <em>clareza, valor e direção.</em></h2>
           </div>
           <div class="question-list" aria-label="Dúvidas comuns de posicionamento">
             <div class="question">“Não sei exatamente quem é o meu público.”</div>
@@ -1462,8 +1468,7 @@ html.js .step {
             <p class="eyebrow">O que muda</p>
             <h2 class="title" id="outcomes-title">Quando existe estratégia, cada escolha ganha contexto.</h2>
           </div>
-          <p>Não se trata de publicar mais. Trata-se de saber por que, para quem e com qual impacto você está
-            comunicando.</p>
+
         </div>
         <div class="outcome-grid">
           <article class="outcome"><span class="outcome-mark" aria-hidden="true">↗</span>
