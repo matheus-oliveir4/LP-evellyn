@@ -1326,6 +1326,11 @@ html.js .step {
         transition: none;
       }
     }
+    #processo .step-grid { gap: 18px; border-top: 0; }
+    #processo .step,
+    #processo .step:not(:first-child),
+    #processo .step:last-child { padding: 28px 24px; border: 1px solid var(--line); border-radius: 16px; }
+    @media (max-width: 640px) { #processo .step, #processo .step:not(:first-child), #processo .step:last-child { padding: 32px 28px; } }
   </style>
 </head>
 
