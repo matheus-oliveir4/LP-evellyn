@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Estratégia de posicionamento e comunicação para marcas que querem decidir com clareza.">
+  <title>Evellyn Lopes — estratégia que dá direção</title>
+  <style>
+    :root {
+      --ink: #17201b;
+      --ink-soft: #465049;
+      --paper: #f6f6f1;
+      --white: #ffffff;
+      --line: #d9ddd6;
+      --moss: #315b48;
+      --sage: #dce9d7;
+      --lime: #d9ef70;
+      --peach: #f5d8cd;
+      --blue: #cce2e5;
+      --radius-xl: 36px;
+      --radius-lg: 24px;
+      --shadow: 0 18px 50px rgba(23, 32, 27, .08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    button, input, textarea { font: inherit; }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--moss);
+      outline-offset: 4px;
+    }
+
+    .shell { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0;
+      color: var(--moss);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); content: ""; }
+    .display {
+      margin: 0;
+      letter-spacing: -.065em;
+      font-size: clamp(46px, 6.35vw, 88px);
+      font-weight: 700;
+      line-height: .93;
+    }
+    .title {
+      margin: 0;
+      max-width: 790px;
+      letter-spacing: -.055em;
+      font-size: clamp(36px, 4.35vw, 62px);
+      font-weight: 700;
+      line-height: .99;
+    }
+    .body-copy { color: var(--ink-soft); font-size: 17px; line-height: 1.6; }
+    .rule { width: 100%; height: 1px; margin: 0; background: var(--line); border: 0; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 22px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--white);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 750;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--moss); }
+    .button .arrow { margin-left: 15px; font-size: 19px; font-weight: 400; line-height: 0; }
+    .button--light { border-color: var(--paper); background: var(--paper); color: var(--ink); }
+    .button--light:hover { background: var(--lime); }
+
+    header { padding: 22px 0; }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      min-height: 50px;
+    }
+    .brand { display: inline-flex; flex-direction: column; font-size: 15px; font-weight: 800; letter-spacing: -.04em; line-height: .9; }
+    .brand small { margin-top: 5px; color: var(--ink-soft); font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 22px; color: var(--ink-soft); font-size: 13px; font-weight: 700; }
+    .nav-links a:hover { color: var(--moss); }
+    .nav .button { min-height: 42px; padding: 0 17px; font-size: 12px; }
+
+    .hero { padding: 52px 0 76px; }
+    .hero-copy { display: grid; grid-template-columns: minmax(0, 1.06fr) minmax(350px, .94fr); align-items: end; gap: 55px; }
+    .hero h1 span { color: var(--moss); }
+    .hero-intro { max-width: 440px; margin: 0 0 26px; }
+    .hero-note { display: flex; align-items: center; gap: 10px; margin: 26px 0 0; color: var(--ink-soft); font-size: 12px; }
+    .hero-note i { display: block; width: 25px; height: 1px; background: var(--moss); }
+
+    .strategy-board {
+      position: relative;
+      min-height: 465px;
+      overflow: hidden;
+      border: 1px solid rgba(23, 32, 27, .08);
+      border-radius: var(--radius-xl);
+      background: #e9eee7;
+      box-shadow: var(--shadow);
+    }
+    .strategy-board::before, .strategy-board::after { position: absolute; border-radius: 50%; content: ""; }
+    .strategy-board::before { top: -120px; right: -85px; width: 350px; height: 350px; background: var(--lime); opacity: .9; }
+    .strategy-board::after { bottom: -130px; left: -90px; width: 310px; height: 310px; background: var(--peach); }
+    .board-label { position: absolute; z-index: 3; top: 28px; left: 30px; display: flex; align-items: center; gap: 10px; color: var(--ink-soft); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .board-label b { display: grid; width: 25px; height: 25px; place-items: center; border-radius: 8px; background: var(--moss); color: var(--lime); font-size: 14px; }
+    .board-card { position: absolute; z-index: 2; overflow: hidden; border: 1px solid rgba(23, 32, 27, .08); border-radius: 20px; background: rgba(255, 255, 255, .9); box-shadow: 0 12px 30px rgba(23, 32, 27, .09); backdrop-filter: blur(10px); }
+    .board-card--map { top: 90px; left: 30px; width: 58%; padding: 20px; }
+    .board-card--signal { right: 27px; bottom: 37px; width: 52%; padding: 19px; background: var(--ink); color: var(--white); }
+    .board-card--tag { top: 166px; right: 26px; display: flex; align-items: center; gap: 10px; padding: 13px 15px; transform: rotate(5deg); }
+    .tiny-title { margin: 0; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .map-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px; }
+    .map-head span { display: grid; width: 26px; height: 26px; place-items: center; border-radius: 50%; background: var(--sage); color: var(--moss); font-size: 14px; }
+    .chart { display: flex; align-items: end; gap: 7px; height: 97px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+    .chart i { display: block; flex: 1; border-radius: 5px 5px 2px 2px; background: var(--moss); }
+    .chart i:nth-child(1) { height: 29%; background: #a7c5ad; }.chart i:nth-child(2) { height: 43%; background: #82a58d; }.chart i:nth-child(3) { height: 35%; background: #a7c5ad; }.chart i:nth-child(4) { height: 61%; background: #557e64; }.chart i:nth-child(5) { height: 76%; }.chart i:nth-child(6) { height: 92%; background: var(--lime); }
+    .map-bottom { display: flex; justify-content: space-between; margin-top: 13px; color: var(--ink-soft); font-size: 10px; }
+    .signal-line { display: flex; align-items: center; gap: 8px; margin: 15px 0 20px; }
+    .signal-line i { display: block; width: 9px; height: 9px; border-radius: 50%; background: var(--lime); }.signal-line span { height: 1px; flex: 1; background: rgba(255,255,255,.28); }
+    .signal-number { margin: 0; letter-spacing: -.08em; font-size: 48px; font-weight: 750; line-height: .8; }
+    .signal-caption { margin: 9px 0 0; color: rgba(255,255,255,.7); font-size: 11px; line-height: 1.3; }
+    .tag-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--peach); }
+    .board-card--tag p { margin: 0; font-size: 11px; font-weight: 750; }
+
+    .section { padding: 112px 0; }
+    .problem { padding-top: 92px; background: var(--ink); color: var(--white); }
+    .problem .eyebrow { color: var(--lime); }.problem .eyebrow::before { background: var(--peach); }
+    .problem-grid { display: grid; grid-template-columns: .89fr 1.11fr; gap: 80px; align-items: start; }
+    .problem .title { max-width: 580px; }.problem .title em { color: var(--lime); font-style: normal; }
+    .problem-lead { max-width: 450px; margin: 24px 0 0; color: rgba(255,255,255,.7); font-size: 17px; line-height: 1.55; }
+    .question-list { display: grid; gap: 12px; }
+    .question { padding: 23px 24px; border: 1px solid rgba(255,255,255,.16); border-radius: 16px; background: rgba(255,255,255,.055); color: #fbfcf9; font-size: clamp(17px, 2vw, 22px); font-weight: 550; letter-spacing: -.035em; line-height: 1.15; }
+    .question:nth-child(2) { margin-left: 9%; }.question:nth-child(3) { margin-right: 8%; }.question:nth-child(4) { margin-left: 5%; }
+    .problem-closing { width: min(750px, 100%); margin: 96px 0 0 auto; padding-top: 25px; border-top: 1px solid rgba(255,255,255,.24); color: var(--lime); font-size: clamp(25px, 3vw, 40px); font-weight: 600; letter-spacing: -.052em; line-height: 1.04; }
+
+    .services-heading { display: grid; grid-template-columns: .85fr 1.15fr; gap: 55px; margin-bottom: 64px; }.services-heading .body-copy { max-width: 480px; margin: 9px 0 0; }
+    .service-list { border-top: 1px solid var(--line); }
+    .service { display: grid; grid-template-columns: 100px minmax(0, .78fr) minmax(240px, .66fr); gap: 30px; padding: 39px 0; border-bottom: 1px solid var(--line); }
+    .service-index { color: var(--moss); font-size: 13px; font-weight: 800; letter-spacing: .06em; }.service h3 { margin: 0 0 17px; letter-spacing: -.045em; font-size: clamp(25px, 2.8vw, 38px); line-height: 1; }.service p { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.6; }
+    .service-purpose { align-self: start; padding: 19px; border-radius: 16px; background: var(--sage); }.service-purpose span { display: block; margin-bottom: 11px; color: var(--moss); font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }.service-purpose p { color: var(--ink); font-size: 13px; font-weight: 650; line-height: 1.4; }
+
+    .outcomes { padding: 82px 0; background: #e6ece4; }.outcomes-head { display: flex; align-items: end; justify-content: space-between; gap: 35px; margin-bottom: 39px; }.outcomes-head .title { max-width: 650px; }.outcomes-head p { max-width: 300px; margin: 0; color: var(--ink-soft); font-size: 14px; }
+    .outcome-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }.outcome { min-height: 246px; display: flex; flex-direction: column; justify-content: space-between; padding: 20px; border-radius: 19px; background: var(--white); box-shadow: 0 5px 16px rgba(23,32,27,.04); }.outcome:nth-child(2) { background: var(--moss); color: var(--white); }.outcome:nth-child(4) { background: var(--lime); }.outcome-mark { display: grid; width: 35px; height: 35px; place-items: center; border-radius: 12px; background: var(--sage); color: var(--moss); font-size: 18px; font-weight: 700; }.outcome:nth-child(2) .outcome-mark { background: var(--lime); }.outcome:nth-child(4) .outcome-mark { background: var(--white); }.outcome h3 { margin: 0 0 9px; letter-spacing: -.035em; font-size: 19px; line-height: 1.05; }.outcome p { margin: 0; color: var(--ink-soft); font-size: 12px; line-height: 1.47; }.outcome:nth-child(2) p { color: rgba(255,255,255,.7); }
+
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 63px; align-items: center; }.portrait { position: relative; min-height: 495px; overflow: hidden; border-radius: var(--radius-xl); background: var(--moss); }.portrait::before { position: absolute; top: 52px; right: -47px; width: 330px; height: 330px; border: 1px solid rgba(255,255,255,.38); border-radius: 50%; content: ""; }.portrait::after { position: absolute; bottom: -70px; left: -80px; width: 350px; height: 350px; border-radius: 50%; background: var(--lime); content: ""; }.portrait-name { position: absolute; z-index: 2; top: 27px; left: 29px; max-width: 220px; color: var(--white); font-size: 12px; font-weight: 800; letter-spacing: .1em; line-height: 1.2; text-transform: uppercase; }.portrait-initial { position: absolute; z-index: 1; right: 8px; bottom: -79px; color: rgba(255,255,255,.92); font-size: 430px; font-weight: 700; letter-spacing: -.17em; line-height: 1; }.portrait-card { position: absolute; z-index: 3; bottom: 28px; left: 28px; width: 220px; padding: 19px; border: 1px solid rgba(255,255,255,.48); border-radius: 17px; background: rgba(23,32,27,.7); color: var(--white); backdrop-filter: blur(8px); }.portrait-card p { margin: 0; font-size: 12px; line-height: 1.45; }.portrait-card b { color: var(--lime); }
+    .about-copy > .eyebrow { margin-bottom: 21px; }.about-copy .title { margin-bottom: 26px; }.about-copy .body-copy { max-width: 540px; margin: 0 0 17px; }.client-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 33px 0; }.client-list span { padding: 9px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-soft); font-size: 12px; font-weight: 650; }.quote { padding: 22px 0 0; border-top: 1px solid var(--line); color: var(--moss); font-size: 19px; font-weight: 650; letter-spacing: -.035em; line-height: 1.25; }
+
+    .process { background: var(--white); }.process-intro { display: grid; grid-template-columns: .9fr 1.1fr; gap: 55px; align-items: end; margin-bottom: 65px; }.process-intro .body-copy { max-width: 470px; margin: 0; }.step-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }.step { position: relative; min-height: 245px; padding: 25px 22px 18px 0; border-right: 1px solid var(--line); }.step:not(:first-child) { padding-left: 22px; }.step:last-child { border-right: 0; }.step-num { display: block; margin-bottom: 68px; color: var(--moss); font-size: 12px; font-weight: 800; }.step h3 { margin: 0 0 10px; letter-spacing: -.04em; font-size: 22px; line-height: 1; }.step p { max-width: 230px; margin: 0; color: var(--ink-soft); font-size: 13px; line-height: 1.52; }.step::after { position: absolute; right: -5px; top: -5px; width: 9px; height: 9px; border-radius: 50%; background: var(--moss); content: ""; }.step:last-child::after { display: none; }
+
+    .contact { padding: 87px 0 102px; background: var(--ink); color: var(--white); }.contact-wrap { display: grid; grid-template-columns: .95fr 1.05fr; gap: 80px; align-items: start; }.contact .eyebrow { color: var(--lime); }.contact .title { max-width: 600px; }.contact-copy { margin: 23px 0 0; max-width: 470px; color: rgba(255,255,255,.7); font-size: 17px; line-height: 1.55; }
+    .form-card { padding: 29px; border-radius: var(--radius-lg); background: var(--white); color: var(--ink); }.form-card h3 { margin: 0 0 21px; font-size: 20px; letter-spacing: -.04em; }.field { display: block; margin-bottom: 15px; }.field span { display: block; margin-bottom: 7px; color: var(--ink-soft); font-size: 11px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }.field input, .field textarea { width: 100%; border: 1px solid var(--line); border-radius: 10px; background: #fbfcfa; padding: 12px 13px; color: var(--ink); font-size: 14px; }.field textarea { min-height: 90px; resize: vertical; }.form-card .button { width: 100%; margin-top: 3px; }.form-note { min-height: 18px; margin: 13px 0 0; color: var(--ink-soft); font-size: 11px; line-height: 1.4; }
+
+    footer { padding: 29px 0 38px; background: var(--ink); color: rgba(255,255,255,.65); }.footer-row { display: flex; align-items: end; justify-content: space-between; gap: 25px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.16); }.footer-row p { margin: 0; font-size: 11px; }.footer-brand { color: var(--white); font-size: 14px; font-weight: 800; letter-spacing: -.04em; }
+
+    @media (max-width: 900px) {
+      .hero-copy, .problem-grid, .about-grid, .contact-wrap { grid-template-columns: 1fr; }.hero-copy { gap: 42px; }.strategy-board { max-width: 620px; }.problem-grid { gap: 45px; }.service { grid-template-columns: 70px minmax(0, 1fr); }.service-purpose { grid-column: 2; max-width: 390px; }.outcome-grid { grid-template-columns: repeat(3, 1fr); }.outcome-grid .outcome:last-child { grid-column: span 2; min-height: 180px; }.outcomes-head, .process-intro, .services-heading { display: block; }.outcomes-head p, .services-heading .body-copy, .process-intro .body-copy { margin-top: 18px; }.step-grid { grid-template-columns: repeat(2, 1fr); }.step:nth-child(2) { border-right: 0; }.step:nth-child(3), .step:nth-child(4) { border-top: 1px solid var(--line); }.step:nth-child(2)::after, .step:nth-child(4)::after { display: none; }.step:nth-child(3)::after { display: block; }.contact-wrap { gap: 42px; }
+    }
+    @media (max-width: 640px) {
+      .shell { width: min(100% - 32px, 1180px); }.nav-links { display: none; }.nav .button { padding: 0 14px; }.hero { padding: 31px 0 55px; }.display { font-size: clamp(43px, 13vw, 64px); }.strategy-board { min-height: 390px; }.board-card--map { top: 78px; left: 18px; width: 61%; }.board-card--signal { right: 17px; bottom: 23px; width: 58%; }.board-card--tag { top: 147px; right: 14px; }.section { padding: 75px 0; }.problem { padding-top: 72px; }.question { padding: 19px; }.question:nth-child(2), .question:nth-child(4) { margin-left: 0; }.question:nth-child(3) { margin-right: 0; }.problem-closing { margin-top: 65px; }.service { grid-template-columns: 1fr; gap: 18px; padding: 31px 0; }.service-purpose { grid-column: auto; }.outcome-grid { grid-template-columns: 1fr 1fr; }.outcome { min-height: 205px; }.outcome-grid .outcome:last-child { grid-column: span 2; }.portrait { min-height: 400px; }.portrait-initial { font-size: 350px; }.step-grid { grid-template-columns: 1fr; }.step, .step:not(:first-child) { min-height: auto; padding: 24px 0; border-right: 0; border-top: 1px solid var(--line); }.step:first-child { border-top: 0; }.step::after { display: none; }.step-num { margin-bottom: 28px; }.form-card { padding: 21px; }.footer-row { align-items: start; flex-direction: column; }.title { font-size: clamp(34px, 10vw, 50px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell nav" aria-label="Navegação principal">
+      <a class="brand" href="#inicio" aria-label="Evellyn Lopes, início">Evellyn Lopes<small>estratégia &amp; posicionamento</small></a>
+      <nav class="nav-links" aria-label="Links da página"><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#processo">Como funciona</a></nav>
+      <a class="button" href="#formulario">Receber proposta <span class="arrow" aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="shell hero-copy">
+        <div>
+          <p class="eyebrow">Estratégia para marcas em movimento</p>
+          <h1 class="display">Transforme dados em <span>decisões estratégicas.</span></h1>
+        </div>
+        <div>
+          <p class="hero-intro body-copy">Entenda o que está limitando o posicionamento da sua marca nas redes sociais e transforme dados em uma estratégia de comunicação mais assertiva para o seu negócio.</p>
+          <a class="button" href="#formulario">Quero receber uma proposta <span class="arrow" aria-hidden="true">↗</span></a>
+          <p class="hero-note"><i aria-hidden="true"></i> Antes de comunicar, vamos entender.</p>
+        </div>
+      </div>
+      <div class="shell" style="margin-top: 54px;">
+        <div class="strategy-board" aria-label="Representação visual de análise estratégica">
+          <div class="board-label"><b aria-hidden="true">✦</b> leitura estratégica</div>
+          <div class="board-card board-card--map">
+            <div class="map-head"><p class="tiny-title">Mapa do cenário atual</p><span aria-hidden="true">↗</span></div>
+            <div class="chart" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="map-bottom"><span>presença digital</span><strong>pontos de atenção</strong></div>
+          </div>
+          <div class="board-card board-card--tag"><span class="tag-dot" aria-hidden="true"></span><p>Decisões com intenção</p></div>
+          <div class="board-card board-card--signal">
+            <p class="tiny-title">Clareza de posicionamento</p>
+            <div class="signal-line" aria-hidden="true"><i></i><span></span><i></i><span></span><i></i></div>
+            <p class="signal-number">→</p><p class="signal-caption">Do diagnóstico ao direcionamento que sustenta sua comunicação.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem section">
+      <div class="shell">
+        <div class="problem-grid">
+          <div><p class="eyebrow">O problema não é apenas postar</p><h2 class="title">A comunicação perde força quando as decisões nascem do <em>achismo.</em></h2><p class="problem-lead">Estar presente nas redes sociais não é o mesmo que comunicar com clareza, valor e direção.</p></div>
+          <div class="question-list" aria-label="Dúvidas comuns de posicionamento">
+            <div class="question">“Não sei exatamente quem é o meu público.”</div>
+            <div class="question">“Estou nas redes sociais, mas os clientes não chegam.”</div>
+            <div class="question">“Quero aumentar o engajamento, mas não sei o que mudar.”</div>
+            <div class="question">“Quero aumentar meu ticket, mas minha comunicação não transmite esse valor.”</div>
+          </div>
+        </div>
+        <p class="problem-closing">Quando as decisões são tomadas no achismo, fica difícil entender o que está funcionando, o que precisa mudar e onde está o verdadeiro gargalo.</p>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="shell">
+        <div class="services-heading"><div><p class="eyebrow">Serviços</p><h2 class="title">O trabalho começa antes do calendário de conteúdo.</h2></div><p class="body-copy">Uma investigação que transforma informações dispersas em um plano claro para sua marca ocupar o espaço que quer construir.</p></div>
+        <div class="service-list">
+          <article class="service"><div class="service-index">01</div><div><h3>Investigação e diagnóstico de posicionamento</h3><p>Coleta e análise de dados que apoiam a tomada de decisões estratégicas. Investigamos diferentes perspectivas do negócio: mercado, cliente, comercial, marketing e presença digital, para construir uma visão mais clara do cenário atual.</p></div><div class="service-purpose"><span>O objetivo</span><p>Entender onde sua marca está hoje e o que pode estar limitando seus resultados.</p></div></article>
+          <article class="service"><div class="service-index">02</div><div><h3>Desenvolvimento de estratégia para o Instagram</h3><p>Com o diagnóstico em mãos, buscamos os principais gargalos que impedem sua comunicação de avançar. A estratégia é construída de forma dedicada ao seu negócio, considerando objetivos, público, posicionamento, diferenciais e oportunidades identificadas na investigação.</p></div><div class="service-purpose"><span>O objetivo</span><p>Transformar informação em direcionamento estratégico.</p></div></article>
+          <article class="service"><div class="service-index">03</div><div><h3>Da investigação ao calendário editorial</h3><p>A estratégia ganha forma através de um calendário editorial pensado para comunicar o posicionamento definido. Cada conteúdo passa a ter uma função: posicionar, educar, gerar percepção de valor, criar relacionamento ou estimular uma ação.</p></div><div class="service-purpose"><span>O objetivo</span><p>Deixar de produzir conteúdo apenas para manter o perfil ativo e começar a comunicar com intenção.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="outcomes" aria-labelledby="outcomes-title">
+      <div class="shell"><div class="outcomes-head"><div><p class="eyebrow">O que muda</p><h2 class="title" id="outcomes-title">Quando existe estratégia, cada escolha ganha contexto.</h2></div><p>Não se trata de publicar mais. Trata-se de saber por que, para quem e com qual impacto você está comunicando.</p></div>
+        <div class="outcome-grid">
+          <article class="outcome"><span class="outcome-mark" aria-hidden="true">↗</span><div><h3>Clareza para decidir</h3><p>Entenda quais caminhos fazem sentido e deixe de depender apenas de suposições.</p></div></article>
+          <article class="outcome"><span class="outcome-mark" aria-hidden="true">◌</span><div><h3>Menos incerteza</h3><p>Decisões apoiadas por informações e análises, não apenas por tendências.</p></div></article>
+          <article class="outcome"><span class="outcome-mark" aria-hidden="true">+</span><div><h3>Comunicação estratégica</h3><p>Seus diferenciais aparecem de forma coerente com o posicionamento desejado.</p></div></article>
+          <article class="outcome"><span class="outcome-mark" aria-hidden="true">⌁</span><div><h3>Visão do negócio</h3><p>A análise considera o contexto da marca para encontrar oportunidades reais.</p></div></article>
+          <article class="outcome"><span class="outcome-mark" aria-hidden="true">✦</span><div><h3>Conteúdo com propósito</h3><p>Cada publicação deixa de ser isolada e passa a fazer parte de uma estratégia.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="shell about-grid">
+        <div class="portrait" aria-label="Painel de apresentação de Evellyn Lopes"><p class="portrait-name">Por trás<br>da estratégia</p><span class="portrait-initial" aria-hidden="true">E</span><div class="portrait-card"><p><b>Antes de criar, é preciso entender.</b><br>Boas decisões de comunicação começam com as perguntas certas.</p></div></div>
+        <div class="about-copy"><p class="eyebrow">Evellyn Lopes</p><h2 class="title">Estratégia é o que dá intenção à presença da sua marca.</h2><p class="body-copy">Atuo com empresas desde 2022, da estratégia à criação, desenvolvendo soluções de comunicação e posicionamento para diferentes negócios.</p><div class="client-list" aria-label="Empresas atendidas"><span>Fastef</span><span>Aeris</span><span>Pulse Energy</span><span>Thronus Medical</span><span>Mahalo Poke</span><span>Volconi</span></div><p class="quote">“Uma boa estratégia não começa com ‘o que vamos postar?’, mas com ‘o que precisamos entender para tomar a decisão certa?’”</p></div>
+      </div>
+    </section>
+
+    <section class="process section" id="processo">
+      <div class="shell"><div class="process-intro"><div><p class="eyebrow">Como funciona</p><h2 class="title">Do primeiro contato ao início de uma parceria com direção.</h2></div><p class="body-copy">Um processo simples e personalizado para entender o momento da sua marca antes de definir o melhor caminho.</p></div>
+        <div class="step-grid">
+          <article class="step"><span class="step-num">01</span><h3>Entre em contato</h3><p>Preencha o formulário e conte brevemente sobre o seu negócio e o que você busca.</p></article>
+          <article class="step"><span class="step-num">02</span><h3>Avaliação</h3><p>Analiso seu cenário para entender qual serviço faz mais sentido para o momento do seu negócio.</p></article>
+          <article class="step"><span class="step-num">03</span><h3>Proposta</h3><p>Você recebe uma proposta desenvolvida de acordo com as suas necessidades e objetivos.</p></article>
+          <article class="step"><span class="step-num">04</span><h3>Contrato</h3><p>Com tudo alinhado, formalizamos a parceria e damos início ao trabalho.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="formulario">
+      <div class="shell contact-wrap"><div><p class="eyebrow">Vamos conversar</p><h2 class="title">Sua marca não precisa de mais conteúdo. Precisa de direção.</h2><p class="contact-copy">Vamos descobrir o que os dados podem revelar sobre o seu posicionamento?</p></div>
+        <form class="form-card" id="proposal-form"><h3>Quero receber uma proposta</h3><label class="field"><span>Seu nome</span><input required name="nome" autocomplete="name" placeholder="Como podemos te chamar?"></label><label class="field"><span>E-mail</span><input required type="email" name="email" autocomplete="email" placeholder="voce@empresa.com"></label><label class="field"><span>Sobre o seu negócio</span><textarea required name="mensagem" placeholder="Conte brevemente sobre o seu momento e o que busca."></textarea></label><button class="button" type="submit">Enviar solicitação <span class="arrow" aria-hidden="true">↗</span></button><p class="form-note" id="form-note" aria-live="polite">Os campos são apenas uma demonstração visual nesta versão.</p></form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell footer-row"><a class="footer-brand" href="#inicio">Evellyn Lopes</a><p>Estratégia e posicionamento para comunicar com intenção.</p><p>© <span id="year"></span></p></div></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('proposal-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      document.getElementById('form-note').textContent = 'Dados validados. Conecte este formulário ao seu canal de atendimento para receber solicitações.';
+    });
+  </script>
+</body>
+</html>
