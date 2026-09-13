@@ -1626,7 +1626,9 @@ html.js .step {
           <h3>Quero receber uma proposta</h3><label class="field"><span>Seu nome</span><input required name="nome"
               autocomplete="name" placeholder="Como podemos te chamar?"></label><label
             class="field"><span>E-mail</span><input required type="email" name="email" autocomplete="email"
-              placeholder="voce@empresa.com"></label><label class="field"><span>Sobre o seu negócio</span><textarea
+              placeholder="voce@empresa.com"></label><label class="field"><span>WhatsApp</span><input required type="tel"
+              name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="(85) 99999-9999"></label><label
+            class="field"><span>Sobre o seu negócio</span><textarea
               required name="mensagem"
               placeholder="Conte brevemente sobre o seu momento e o que busca."></textarea></label><button
             class="button" type="submit">Enviar solicitação <span class="arrow" aria-hidden="true">↗</span></button>
@@ -1704,6 +1706,7 @@ html.js .step {
           body: JSON.stringify({
             nome: formData.get('nome'),
             email: formData.get('email'),
+            whatsapp: formData.get('whatsapp'),
             mensagem: formData.get('mensagem')
           })
         });
