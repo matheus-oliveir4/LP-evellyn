@@ -1085,14 +1085,15 @@
       border-radius: 50%;
       background: #25d366;
       color: #fff;
-      box-shadow: 0 12px 26px rgba(23, 32, 27, .24);
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      /* drop-shadow acompanha o contorno circular, inclusive no Safari móvel. */
+      filter: drop-shadow(0 12px 13px rgba(23, 32, 27, .24));
+      transition: transform .2s ease, filter .2s ease, background .2s ease;
     }
 
     .whatsapp-float:hover {
       transform: translateY(-3px) scale(1.04);
       background: #1fbd5a;
-      box-shadow: 0 16px 30px rgba(23, 32, 27, .3);
+      filter: drop-shadow(0 16px 15px rgba(23, 32, 27, .3));
     }
 
     .whatsapp-float svg {
